@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+<title>Esempio di scope delle variabili in javascript</title>
+<style>
+body {
+
+  font-size:30px;
+}
+
+</style>
+</head>
+<body>
+
+
+
+<script>
+// Nelle dichiarazioni delle variabili quando è possibile usare let 
+let x = 20;
+
+    function ambitovariabili() {
+ let x = 1;
+  alert(x);
+  if (true) {
+    let x = 2;
+    alert(x); 
+  }
+  alert(x); // stamperà 2 con var e 1 usando let
+}
+
+ambitovariabili();
+
+alert(x);
+
+
+
+
+</script>
+
+
+</body>
+</html>

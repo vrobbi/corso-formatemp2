@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+<title>Esempio di scope delle variabili in javascript</title>
+<style>
+body {
+
+  font-size:30px;
+}
+
+</style>
+</head>
+<body>
+
+
+
+<script>
+/* Non è possibile ridichiarare una 
+variabile con const nello stesso blocco di codice   */
+
+    function ambitovariabili() {
+var x = 1;  // prima dichiarazione  con const
+  alert(x);
+  if (true) {
+    var x = 2;  // seconda dichiarazione con const
+    alert(x); 
+  }
+     x = 3;
+  alert(x); // sono nello stesso blocco di codice della prima dichiarazione
+}
+
+ambitovariabili();
+
+
+
+
+</script>
+
+
+</body>
+</html>

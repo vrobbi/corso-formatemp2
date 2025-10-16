@@ -1,0 +1,92 @@
+<html>
+<head>
+    <title>caricamento dati</title>
+    <meta name='viewport' content='initial-scale=1'>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <meta name="theme-color" content="#59524c">
+
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    	<div class='content'>
+	<h1>Upload foto</h1>
+        <div class='column'>
+            <div class='box' id="dropdiv" ondrop="drag_drop(event,event.dataTransfer.files[0])" ondragover="return false">
+                <h2>Rilascia il file qui<br />oppure</h2>
+                <form enctype="multipart/form-data" method="post">
+                <input type="file" name="upfile" id="upfile" accept="image/*" /><br />
+                <label for="nomefile">Inserisci il nome del file</label>
+                <input type="text" name="nomefile" id="nomefile">
+                <input type="button" id="btnid" onclick="drag_drop(event,document.forms[0].elements[0].files[0])" value="Carica file" disabled  /></form>
+
+                <progress id="progress_bar"></progress><br />
+                <span id="infoupload"></span>
+                <span id="infofilecaricato"></span>
+            </div>
+        </div>
+    </div><script>
+
+    var progressBar = document.getElementById('progress_bar');
+    progressBar.value = 0;
+    var infoupload = document.getElementById('infoupload');
+
+    document.getElementById('upfile').onchange = function(e) {
+if  (document.getElementById('upfile').value.length > 0) {
+     document.getElementById('btnid').disabled = false;
+   alert(document.getElementById('upfile').value.length);
+    }  }
+
+function drag_drop(event,objectfile) {
+event.preventDefault();
+var file = objectfile;
+if(file.size > 8000000) {
+infoupload.innerHTML = '<span class=\'error\'>File troppo pesante, upload annullato</span>';
+return;
+}
+document.getElementById('btnid').disabled = true;
+// var file = event.dataTransfer.files[0];
+
+var fd = new FormData();
+      fd.append('upfile1', file);
+      fd.append('nomefile',document.getElementById('nomefile').value); 
+
+      var xhr = new XMLHttpRequest();
+      infoupload.innerHTML='Inizio caricamento ...';
+      alert('Inizio caricamento ...');
+     xhr.open('POST', 'upload.php', true);      
+     document.getElementById('infofilecaricato').innerHTML ='';
+     progressBar.value = 0;
+
+      xhr.upload.onprogress = function (e) {
+      infoupload.innerHTML='Caricamento file in corso ...';
+       alert('Caricamento file in corso ...');
+        if (e.lengthComputable) {
+          var percento = e.loaded / e.total;
+          progressBar.value = percento.toFixed(2);
+          
+          console.log('Caricamento in corso ' + progressBar.value);
+          alert('Caricamento in corso ' + progressBar.value);
+        }
+      };
+
+      xhr.onload = function () {
+        if (this.status == 200) {
+        infoupload.innerHTML='Caricamento completato';
+        console.log('Caricamento completato');
+         alert('Caricamento completato');
+            document.getElementById('btnid').disabled = true;
+          document.getElementById('infofilecaricato').innerHTML =  this.responseText;
+
+        };
+      };
+
+      xhr.send(fd);
+}   
+  </script>
+</body>
+</html>

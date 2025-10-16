@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="content-type" content="text/html">
+<title>Esempio di invio e ricezione dati con ajax</title>
+<style>
+  body {
+
+    font-size: 23px;
+  }
+
+  #xhrresult div:nth-of-type(odd) {
+  width:450px;
+  height:auto;
+  border: 1px;
+  border-style: solid;
+  background-color: #e2b5db;
+  padding:5px;
+  margin-bottom:0px;
+  border-top:0px;
+  }
+
+    #xhrresult div:nth-of-type(even) {
+  width:450px;
+  height:auto;
+  border: 1px;
+  border-style: solid;
+  padding:5px;
+  background-color: #98dba7;
+  margin-bottom: px;
+  border-top:0px;
+  }
+</style>
+</head>
+
+<body>
+
+  <script>
+
+    function inviaericevi() {
+      //recupero i dati da input di testo
+      var msg = document.f1.messaggio.value;
+       // conversione delle lettere accentate in unicode
+let msgpulito = msg.split('').map(function(char) {
+  // Controlla se il carattere ha un codice unicode e lo converte
+  if (char.charCodeAt(0) > 127) {
+    return '&#' + char.charCodeAt(0) + ';';
+  } else {
+    return char;
+  }
+}).join('');
+//   console.log(msgpulito); 
+      // pulisco l'input di testo
+      document.f1.messaggio.value = "";
+      let r = Math.random();
+      // istanzio una copia dell'oggetto XMLHttpRequest  (ajax)
+      const xhr = new XMLHttpRequest();
+      // metodo usato e indirizzo a cui inviare la richiesta  asincrona (true)
+      xhr.open("POST", "chat-server.php", true);
+
+      // assieme alla richiesta invio informazioni della intestazione
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+          
+      xhr.onreadystatechange = () => {
+        // in attesa dei dati - Chiama una funzione quando lo stato cambia
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+
+          let e = document.getElementById("xhrresult");
+           // inserisco di dati ricevuti nel div con id="xhrresult"
+          e.innerHTML = xhr.responseText;
+
+        }
+
+      
+      };   // invio i dati in formato nome=valore&nome=valore
+      xhr.send("msg=" + escape(msgpulito) + "&rand=" + escape(r));
+    }
+
+    function cancellalistamsg()   {
+      let r = Math.random();
+      const xhr = new XMLHttpRequest();
+       xhr.open("POST", "chat-server.php", true);
+       // assieme alla richiesta invio informazioni della intestazione
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        
+       xhr.onreadystatechange = () => {
+        // Chiama una funzione quando lo stato cambia al valore 4 (richiesta completata)
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+
+          let e = document.getElementById("xhrresult");
+             // inserisco di dati ricevuti nel div con id="xhrresult"
+          e.innerHTML = xhr.responseText;
+
+        }
+      };     //  invio la richiesta al server
+        xhr.send("cancella=cancella" + "&rand=" + escape(r));
+     
+
+    }
+
+
+  </script>
+  <form name="f1">
+    Scrivi messaggio: <input type="text" name="messaggio">
+    <input type="button" onclick="inviaericevi()" value="Invia e ricevi la lista messaggi" />
+    <input type="button" onclick="cancellalistamsg()" value="Cancella la lista messaggi">
+    <br />
+    Lista messaggi: <div id="xhrresult"></div>
+  </form>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+
+/* ---------------------- Body ----------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #333;
+    background: #f1f1f1;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0;
+    letter-spacing: normal;
+}
+
+/* ---------------------- Titles ----------------------*/
+
+h1 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+h2 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+h3 {
+    font-size: 15px;
+    margin: 0 0 10px;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    color: #46403c;
+}
+
+@media screen and (max-width: 981px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    h3.blue {
+        font-size: 18px;
+    }
+}
+
+/* ---------------------- WP Top Bar ----------------------*/
+
+.top-bar {
+	padding: 4px 0;
+	background: #59524c;
+	line-height: 1.2;
+}
+
+.top-bar a:hover {
+	color: #c7a589;
+	background: #46403c;
+}
+
+.top-bar .wp-admin {
+    position: absolute;
+    margin: 0;
+    margin-top: -5px;
+    padding: 10px 10px 7px;
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: 400;
+	text-decoration: none;
+}
+
+.top-bar .wp-logo {
+    margin: 0;
+    padding: 3px 6px 2px;
+    color: #ffffff;
+    font-size: 20px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* ---------------------- Divs ----------------------*/
+
+.content {
+    padding: 10px 50px;
+    margin-bottom: 30px;
+}
+
+.column {
+    float: left;
+    margin-top: 10px;
+}
+
+.box {
+    width: 100%;
+    border: 1px solid #ccd0d4;
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff;
+}
+
+.box:first-child {
+    margin-top: 0px;
+}
+
+#dropdiv {
+    border: 2px dashed #aaaaaa;
+    text-align: center;
+}
+
+/* ---------------------- Inputs ----------------------*/
+
+input[type=text],
+input[type=password],
+select {
+    padding: 5px;
+    margin: 10px 0;
+    border: 1px solid #7e8993;
+    border-radius: 4px;
+    width: 200px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+input[type=file] {
+    margin: 8px;
+    cursor: pointer;
+}
+
+label {
+    cursor: pointer;
+}
+
+/* ---------------------- Buttons ----------------------*/
+
+input[type=button],
+input[type=submit] {
+    background: #c7a589;
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    padding: 8px 12px;
+    text-decoration: none;
+    margin: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+input[value=Indietro] {
+    background: transparent;
+    color: #0071a1;
+    font-weight: 600;
+    border: 1px solid #0071a1;
+    border-radius: 2px;
+}
+
+input[value=Indietro]:hover {
+    background: #46403c;
+    color: #ffffff;
+    border: 1px solid #0071a1;
+}
+
+input[type=submit]:hover {
+    opacity: 0.9;
+}
+
+/* ---------------------- Other elements ----------------------*/
+
+.fas {
+    margin-right: 10px;
+}
+
+progress {
+    width: 50%;
+    margin: 10px 0;
+    border-radius: 2px;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #cccccc;
+}
+
+progress::-webkit-progress-value {
+    background-color: #007500;
+}
+
+progress::-moz-progress-bar {
+    background-color: #007500;
+}
+
+#infoupload {
+    display: none;
+}
+
+#infofilecaricato {
+    margin-top: 10px;
+    display: block;
+}
+
+.success {
+    color: #007500;
+    font-weight: 600;
+}
+
+.error {
+    color: #ff0000;
+    font-weight: 600;
+}

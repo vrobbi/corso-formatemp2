@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+<title>esempio di settimeout e cleartimeout</title>
+<style>
+body {
+
+  font-size:30px;
+}
+
+ button {
+  width: 160px;
+   height: 60px;
+   font-size:medium;
+   background-color:lightgreen;
+  }
+
+</style>
+</head>
+<body>
+<h3>Esempio con settimeout e cleartimeout</h3>
+
+<div id="demo"></div>
+
+<script>
+
+const myTimeout = setTimeout(myGreeting, 6000); // la funzione settimeout è asincrona (quindi non bloccante) 
+
+document.getElementById("demo").innerHTML = "Il temporizzatore è partito";
+//console.log("In attesa che arrivi il timeout");
+function myGreeting() {
+  document.getElementById("demo").innerHTML = "Happy Birthday to You !!"
+  console.log("Happy Birthday to You !!");
+}
+
+
+function myStopFunction() {
+  clearTimeout(myTimeout);
+   document.getElementById("demo").innerHTML = "Temporizzatore fermato"
+   console.log("Temporizzatore fermato");
+}
+</script>
+<button onclick="myStopFunction()">Ferma il temporizzatore</button>
+</body>
+</html>

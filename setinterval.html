@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="content-type" content="text/html">
+<title>esempio di settinterval e clearinterval</title>
+<style>
+  body {
+
+    font-size: 30px;
+  }
+
+  button {
+  width: 160px;
+   height: 60px;
+   font-size:medium;
+   background-color:lightgreen;
+  }
+</style>
+</head>
+
+<body>
+  <h2>The setInterval() and clearInterval() Methods</h2>
+
+  <p id="demo"></p>
+
+  <button onclick="myToggle()" id="bottoneorario" value="orario">STOPPA ORARIO</button>
+
+  <script>
+   let myInterval = setInterval(myTimer, 1000);
+
+    function myTimer() {
+      const date = new Date();
+      document.getElementById("demo").innerHTML = date.toLocaleTimeString();
+    }
+
+    function myToggle() {
+      if (document.getElementById('bottoneorario').value == "orario") {
+        clearInterval(myInterval);
+      document.getElementById('bottoneorario').value ="riavviaorario";  
+      document.getElementById('bottoneorario').innerHTML ="RIAVVIA ORARIO";  
+      } else {
+      myInterval =  setInterval(myTimer, 1000);
+        document.getElementById('bottoneorario').value = "orario";
+        document.getElementById('bottoneorario').innerHTML ="STOPPA ORARIO";  
+      }
+
+    }
+
+
+  </script>
+
+</body>
+
+</html>

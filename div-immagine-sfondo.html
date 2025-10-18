@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+  body h1 {
+  font-size: clamp(1.2rem,10vW,4rem);/* minimo, preferito, massimo valore  */
+
+  } 
+
+  img {
+  max-width: 100%;
+  height:auto;
+
+  }
+.flex-container {
+  display: grid;
+  /*outside,inside,listitem,internal,box,legacy,flex
+  /*flex-direction: column-reverse ;
+  flex-direction: column; 
+  flex-direction: row-reverse; 
+     */
+    flex-direction:   row-reverse; 
+  /* background-color: DodgerBlue;  
+  background-repeat:no-repeat;   immagine non ripetuta
+  background-repeat:repeat-x;   immagine ripetuta orizzontalmente
+  background-repeat:repeat-y;  immagine ripetuta verticalmente
+  */
+  background-image:url('img/cerchio.png');  
+  /* inserimento di immagine di sfondo*/
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<h1>The flex-direction Property</h1>
+
+<p>flex-direction: row; stacks the flex items horizontally (from left to right):</p>
+
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div> 
+  <div>4</div>   
+</div>
+
+</body>
+</html>

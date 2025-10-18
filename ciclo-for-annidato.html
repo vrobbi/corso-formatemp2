@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+<title>esempio di ciclo for annidato JavaScript</title>
+<style>
+body {
+
+  font-size:30px;
+  text-align:center;
+}
+
+#verde {
+
+  background-color: chartreuse;
+  width:40%;
+  margin:0 auto;
+}
+
+</style>
+</head>
+<body>
+
+<h1>JavaScript break</h1>
+<h2>The break Statement in a Loop</h2>
+
+
+<p id="demo"></p>
+
+<script>
+let text = "<p id='verde'>Inizio dei cicli<br><br>";
+
+loop1: for (let j = 1; j < 5; j++) {
+    text = text + "Ciclo esterno " + j+ "<br>";
+
+  for (let i = 1; i < 7; i++) {
+    // per fare uscire da un ciclo for inserire break oppure break loop1 per uscire
+    // dal ciclo esterno
+    if (i ===4) { break }
+    text = text + "Ciclo interno "+ i + "<br>";
+  }
+    text = text + "Ciclo esterno fine dalla iterazione esterna<br>";
+}
+
+text = text + "</p>";
+document.getElementById("demo").innerHTML = text ;
+</script>
+
+
+</body>
+</html>

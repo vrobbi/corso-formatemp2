@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+<style>
+
+#visualizzazione {
+font-size:20px;
+
+}  
+
+button {
+  width: 160px;
+   height: 60px;
+   font-size:medium;
+   background-color:lightgreen;
+  }
+</style>
+<script type="text/javascript">
+
+function my_outer_function() {
+   let counter=0;
+  
+  increase_counter=function() {
+    counter++;
+  }
+
+  decrease_counter=function() {
+    counter--;
+  }
+  
+  show_counter=function() {
+  document.getElementById('visualizzazione').innerHTML = '<br>Vedi il numero di click ' +  counter;
+  }
+}
+
+
+
+
+//window.onload = document.getElementsByTagName("button")[0].onclick = func;
+
+
+ 
+</script>
+ <title>Esempio di chiusura in javascript</title>
+</head>
+<body>
+<button onclick= 'my_outer_function()'>funzione esterna</button>
+<button onclick= 'increase_counter()'>funzione incremento</button>
+<button onclick= 'decrease_counter()'>funzione decremento</button>
+<button onclick= 'show_counter()'>funzione visualizzazione</button>
+
+<div id ="visualizzazione"></div>
+</body>
+</html>
+

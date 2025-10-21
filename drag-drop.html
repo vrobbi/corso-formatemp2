@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<title>Drag and Drop example</title>
+
+
+<style type="text/css">
+#a {height:100px;width:200px;left:10px;top:50px;border:1px solid pink;position:absolute;background-color:#EFEFFF;}
+
+</style>
+<script type="text/javascript">
+/*
+	Copyright Robert Nyman, http://www.robertnyman.com
+	Free to use if this text is included
+	// modified slightly based on Prototype
+*/
+
+function getStyle(oElm, strCssRule){
+    var strValue = "";
+   if(document.defaultView && document.defaultView.getComputedStyle){
+      var css = document.defaultView.getComputedStyle(oElm, null);
+      strValue = css ? css.getPropertyValue(strCssRule) : null;
+   }
+  else if(oElm.currentStyle){
+     strCssRule = strCssRule.replace(/\-(\w)/g, function (strMatch, p1){
+        return p1.toUpperCase();
+       });
+       strValue = oElm.currentStyle[strCssRule];
+    }
+    return strValue;
+}
+
+
+function Draggable(el)
+{
+  var xDelta = 0, yDelta =0;
+  var xStart = 0, yStart = 0;
+ var z = document.getElementById('a');
+  // remove the events
+  function enddrag()
+  {
+  document.onmouseup = null;
+    document.onmousemove = null;
+    z.innerHTML = document.getElementById('a').style.top + '<br />'+  document.getElementById('a').style.left 
++ '<br> Sono fermo';
+  }
+
+  // fire each time it's dragged
+  function drag(e)
+  {
+   e = e || window.event;
+    xDelta = xStart - parseInt(e.clientX);
+    yDelta = yStart - parseInt(e.clientY);
+    xStart = parseInt(e.clientX);
+    yStart = parseInt(e.clientY);
+  el.style.top = (parseInt(el.style.top) - yDelta) + 'px';
+    el.style.left = (parseInt(el.style.left) - xDelta) + 'px';
+z.innerHTML = document.getElementById('a').style.top + '<br />'+  document.getElementById('a').style.left 
++ '<br> Mi sto spostando';
+
+  }
+
+  // initiate the drag
+  function md(e)
+  {
+    e = e || window.event;
+  xStart = parseInt(e.clientX);
+   yStart = parseInt(e.clientY); 
+
+     
+    el.style.top = parseInt(getStyle(el,'top')) + 'px';
+    el.style.left = parseInt(getStyle(el,'left')) + 'px';
+   document.onmouseup = enddrag;
+   document.onmousemove = drag;
+    return false;
+  }
+
+  // tie it into the element
+  el.onmousedown = md;
+
+}
+
+window.onload = function()
+{
+  new Draggable(document.getElementById('a'));
+  
+}
+</script>
+
+
+</head>
+<body>
+
+<div id="a">test div con id a
+<br>
+
+
+</div>
+
+</body>
+</html>

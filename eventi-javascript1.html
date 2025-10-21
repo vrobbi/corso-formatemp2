@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="content-type" content="text/html">
+    <!--<meta http-equiv="content-type" content="text/html; charset=UTF-8"> -->
+    <meta name="author" content="Robbi">
+    <meta name="description" content="Corso front end web developer di HTML CSS  JAVACRIPT">
+    <title>Esempio di modifica della proprità  style in javascript</title>
+    <link rel="icon" type="image/x-icon" href="logotalentform.ico">
+    <!--<link rel="stylesheet" type="text/css" href="css/miostile.css">-->
+    <style type="text/css">
+        div.posizione {
+            position: relative;
+            border: 3px red solid;
+            background-color: rgb(136, 120, 226);
+            width: auto;
+            padding: 30px;
+            margin: 0px;
+            bottom: 0px;
+            left: 0px;
+        }
+
+        div {
+            display: block;
+            border: 3px rgb(141, 209, 95) solid;
+            background-color: rgb(136, 120, 226);
+            width: 40%;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        p {
+            display: inline;
+
+            width: auto;
+        }
+
+        button {
+            width: 160px;
+            height: 60px;
+            font-size: medium;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div name="nomeacaso">PRIMO DIV con un name uguale</div>
+     <div name="nomeacaso">Secondo  DIV con name uguale</div>
+     <div name="nomeacaso">Terzo  DIV con name uguale</div>
+    <div class="posizione" name="nomeacaso">QUARTO DIV di classe posizione posizionato in modo relativo</div>
+    <script>
+           /* Si possono usare gli eventi direttamente in javascript
+           
+           */
+          let collezionenomi =  document.getElementsByName('nomeacaso');
+           collezionenomi[0].onmouseover = function () {
+             collezionenomi[0].style.backgroundColor  ='lightgreen';
+              collezionenomi[0].style.color  ='red';
+              collezionenomi[0].style.borderColor  ='blue';
+               collezionenomi[0].style.position  ='absolute';
+          
+          
+           } 
+          collezionenomi =  document.getElementsByName('nomeacaso');
+           collezionenomi[0].onmouseout = function () {
+             collezionenomi[0].style.backgroundColor  ='pink';
+              collezionenomi[0].style.color  ='yellow';
+              collezionenomi[0].style.borderColor  ='blue';
+               collezionenomi[0].style.position  ='static';
+          
+           } 
+
+           collezionenomi[1].onclick = function ()  {
+
+            alert('hai cliccato sul secondo div');
+           } 
+
+
+           collezionenomi[2].onclick = function ()  {
+
+            alert('hai cliccato sul terzo div');
+           } 
+
+            collezionenomi[3].onclick = function ()  {
+
+            alert('hai cliccato sul  quarto div');
+           } 
+
+
+        
+    </script>
+
+
+</body>
+
+</HTML>

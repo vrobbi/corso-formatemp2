@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+<title>esempio di prompt JavaScript</title>
+<style>
+body {
+
+  font-size:30px;
+}
+
+</style>
+</head>
+<body>
+
+
+
+<script>
+var anni;
+do
+{
+anni = prompt("Quanti anni hai?",20);
+} while (isNaN(anni))
+var msg = "Ciao, vedo che sei " + (anni >= 18 ? "maggiorenne" : "minorenne") + "!";
+alert(msg);
+</script>
+
+
+</body>
+</html>

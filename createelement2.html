@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Document Object Model (DOM)</h1>
+<h2>The createElement() Method</h2>
+
+<p>creare l'elemento a (link)</p>
+
+<script>
+var body = document.body;
+var link = document.createElement("a");
+var testo = document.createTextNode("Segui questo link");
+link.setAttribute("href", "chat-ajax.html");
+link.setAttribute("target", "_blank");
+link.appendChild(testo);
+body.appendChild(link);
+</script>
+
+</body>
+</html>

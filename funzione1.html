@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+<title>esempio di funzione in JavaScript</title>
+<style>
+body {
+
+  font-size:30px;
+}
+
+</style>
+</head>
+<body>
+
+
+
+<script>
+let n;
+let lavoro;  
+
+function benvenuto (nom,lav) {
+ let risposta = "Benvenuto, " + nom + " Il tuo lavoro è "+ lav;
+ return risposta;
+
+}
+
+do { 
+ n = prompt("Come ti chiami?");
+}
+while (n.length == 0)
+
+do { 
+ lavoro = prompt("quale è il tuo lavoro?");
+}
+while (lavoro.length == 0)
+
+
+alert (benvenuto (n,lavoro));
+ alert ('scrivo qualsiasi cosa che viene visualizzata');
+</script>
+
+
+</body>
+</html>

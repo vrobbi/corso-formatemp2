@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="content-type" content="text/html">
+<title>esempio di funzione in JavaScript</title>
+<style>
+  body {
+
+    font-size: 30px;
+  }
+</style>
+</head>
+
+<body>
+
+
+
+  <script>
+    let n;
+    let lavoro;
+    let ubicazione;
+    function Persona(nom, lav, localita) {
+
+      this.nome = nom;
+      this.lavoro = lav;
+      this.locazione = localita;
+
+
+      //return this;
+
+      this.risultato = function () {
+        return "Il mio lavoro " + this.lavoro;
+      };
+
+    }
+
+
+    /*
+    do { 
+     n = prompt("Come ti chiami ?");
+    }
+    while (n.length == 0)
+    
+    do { 
+     lavoro = prompt("quale è il tuo lavoro ?");
+    }
+    while (lavoro.length == 0)
+    
+    
+    
+    do { 
+     ubicazione = prompt("Dove vivi ?");
+    }
+    while (ubicazione.length == 0)
+    
+    */
+    // Persona (n,lavoro,ubicazione);
+    let nuovapersona = new Persona('robbi', 'programmatore ', 'Bologna');
+
+    let nuovapersona1 = new Persona('marco', 'operaio ', 'Milano');
+   
+   
+    //alert("Il mio nome " + nuovapersona1.nome + " abito a  " + nuovapersona1.locazione + " " + nuovapersona1.risultato());
+
+   
+    // alert(typeof persona);
+  /*
+      nuovapersona1.changeLocalita = function (name,lavoro) {
+      this.locazione = name;
+      this.lavoro = lavoro;
+    }   
+   nuovapersona1.changeLocalita("Firenze","Commerciante") ;
+
+   alert("Il mio nome " + nuovapersona1.nome + " abito a  " + nuovapersona1.locazione + " " + nuovapersona1.risultato());
+
+    alert(Object.keys(nuovapersona1));
+    alert(Object.values(nuovapersona1));
+    alert(Object.entries(nuovapersona1));
+     */
+    // come creare un oggetto letterale
+    let newpersona = {
+    nome: "Paolo",
+    lavoro: " Artigiano",
+    abitazione:  "Roma"
+    }
+          // per clonare un oggetto già creato
+    let personaClonata = { ...newpersona};
+     
+    // per cambiare il valore della proprietà abitazione
+    personaClonata.abitazione ="Palermo";
+    
+    // per visualizzare solo le chiavi di un oggetto
+    alert(Object.keys(personaClonata));
+    alert(Object.values(personaClonata));
+    alert(Object.entries(personaClonata));
+  </script>
+
+
+</body>
+
+</html>

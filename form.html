@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+<title>esempio di invio di un form dati al server</title>
+<style>
+body {
+
+  font-size:30px;
+  text-align: center;
+  
+}
+input{
+    font-size:30px;
+    height: auto;
+}
+
+#letturavalore  {
+
+    border:2px red solid;
+}
+
+</style>
+<script>
+    function leggivalore (){
+        let letturadatiform="";
+   /*
+        letturadatiform= letturadatiform + document.nomedelform.untitolo.value +"<br>";
+        letturadatiform = letturadatiform + document.nomedelform.untesto.value + "<br>";
+        letturadatiform =  letturadatiform  +  document.nomedelform.method+ "<br>";
+        letturadatiform =  letturadatiform  +  document.nomedelform.action + "<br>";
+         letturadatiform =  letturadatiform  +  document.nomedelform.encoding + "<br>";
+         letturadatiform =  letturadatiform  +  document.nomedelform.length + "<br>";    */
+    document.nomedelform.submit();
+        
+
+document.getElementById('letturavalore').innerHTML= letturadatiform;
+
+    }
+</script>
+</head>
+<body>
+    <div id="letturavalore"></div>
+    <br>
+    <form name="nomedelform" method="post" action="inviaform.php">
+        <label for="untitolo">Inserisci un  titolo</label>
+    <input type="text" name = "untitolo" value="inserisci il titolo" id="untitolo"><br>
+     <label for="untesto">Inserisci un  testo</label>
+    <input type="text" value="inserisci il testo" id="untesto" name="untesto"><br>
+    <input type="button" value="Invia i dati" onclick="leggivalore()">
+</form>
+
+<script>
+
+
+</script>
+
+
+</body>
+</html>

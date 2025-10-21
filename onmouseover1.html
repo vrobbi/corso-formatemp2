@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<style>
+div {
+  width: 200px;
+  height: 100px;
+  border: 3px solid red;
+  margin: 0 auto;
+}
+
+p#demo {
+
+    font-size:60px;
+}
+</style>
+
+<body>
+<p>Move your mouse to see its position.</p>
+<p id="screen-log"></p>
+
+
+
+<script>
+    let screenLog = document.querySelector("#screen-log");
+document.addEventListener("mousemove", logKey);
+
+function logKey(e) {
+  screenLog.innerText = `
+    Screen X/Y: ${e.screenX}, ${e.screenY}
+    Client X/Y: ${e.clientX}, ${e.clientY}`;
+}
+
+</script>
+
+
+</body>
+</html>

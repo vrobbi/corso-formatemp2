@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+<title>esempio di prompt JavaScript</title>
+<style>
+body {
+
+  font-size:30px;
+}
+
+</style>
+</head>
+<body>
+
+
+
+<script>
+var voto = prompt("Introduci il voto dell'alunno",6);
+var msg;
+switch (voto) {
+case "0":
+msg="Il compito non è stato consegnato (non classificabile)";
+break;
+case "1":
+case "2":
+msg="Insufficienza grave";
+break;
+case "3":
+case "4":
+msg="Insufficienza";
+break;
+case "5":
+msg="Sufficienza scarsa";
+break;
+case "6":
+msg="Sufficienza";
+break;
+case "7":
+msg="Sufficienza piena";
+break;
+case "8":
+msg="Buono";
+break;
+case "9":
+msg="Discreto";
+break;
+case "10":
+msg="Ottimo con lode";
+break;
+default:
+msg="Dati non validi";
+}
+alert(msg);
+</script>
+
+
+</body>
+</html>

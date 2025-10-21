@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+<title>esempi  con loggetto string   JavaScript</title>
+<style>
+body {
+
+  font-size:30px;
+}
+
+</style>
+</head>
+<body>
+
+
+
+<script>
+function arrotonda (num, dec, mod) {
+var div = Math.pow(10, dec);
+switch (mod) {
+case 'e':
+case 'E': //eccesso
+return Math.ceil(num * div) / div;
+break;
+case 'd':
+case 'D': //difetto
+return Math.floor(num * div) / div;
+break;
+case 't':
+case 'T': //troncamento
+return parseInt(num * div) / div;
+break;
+case 'a':
+case 'A':
+default: //arrotonda
+return Math.round(num * div) / div;
+}
+}
+//per testarla usiamo queste righe di codice...
+alert(arrotonda(3.43, 1, 't'));
+alert(arrotonda(3.42, 1, 'e'));
+alert(arrotonda(3.469, 2, 'd'));
+alert(arrotonda(3.427, 2, 'e'));
+alert(arrotonda(3.55, 1, 'a'));
+alert(arrotonda(3.46, 1, 't'));
+
+
+</script> 
+
+
+</body>
+</html>

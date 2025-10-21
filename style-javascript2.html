@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="content-type" content="text/html">
+    <!--<meta http-equiv="content-type" content="text/html; charset=UTF-8"> -->
+    <meta name="author" content="Robbi">
+    <meta name="description" content="Corso front end web developer di HTML CSS  JAVACRIPT">
+    <title>Esempio di modifica della proprità  style in javascript</title>
+    <link rel="icon" type="image/x-icon" href="logotalentform.ico">
+    <!--<link rel="stylesheet" type="text/css" href="css/miostile.css">-->
+    <style type="text/css">
+        div.posizione {
+            position: relative;
+            border: 3px red solid;
+            background-color: rgb(136, 120, 226);
+            width: auto;
+            padding: 30px;
+            margin: 0px;
+            bottom: 0px;
+            left: 0px;
+        }
+
+        div {
+            display: block;
+            border: 3px rgb(141, 209, 95) solid;
+            background-color: rgb(136, 120, 226);
+            width: 40%;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        p {
+            display: inline;
+
+            width: auto;
+        }
+
+        button {
+            width: 160px;
+            height: 60px;
+            font-size: medium;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="modificaStile()" id="cambiastyle">Modifica lo stile</button>
+
+    <div name="nomeacaso">PRIMO DIV con un name uguale</div>
+ 
+
+    <br><br>
+    <div name="nomeacaso">Secondo  DIV con name uguale</div>
+     <div name="nomeacaso">Terzo  DIV con name uguale</div>
+    <div class="posizione">SECONDO DIV di classe posizione posizionato in modo relativo</div>
+    <script>
+           /* in javascript con la proprietà style di javascript è possibile modificare completamente l'aspetto del
+            documento  e il suo contenuto usando i metodi getElementsByClassName,  getElementById, getElementsByName,
+             getElementsByTagName
+
+             In questo esempio si utilizza   getElementsByTagName
+           
+           */
+
+        function modificaStile() {
+            let collezionetag =  document.getElementsByTagName('div');
+         alert(typeof(collezionetag));
+
+            collezionetag.style.fontSize = '10px';
+            collezionetag.style.borderColor = 'yellow';
+            collezionetag.style.fontSize = '10px';
+            collezionetag.style.borderColor = 'yellow';
+             collezionetag.style.fontSize = '20px';
+            collezionetag.style.borderColor = 'pink';               
+
+            // document.getElementsByClassName('posizione').style.borderRadius = '10px';
+            /*
+            document.getElementsByClassName('posizione').style.width = '600px';  // in css è  background-color
+            document.getElementsByClassName('posizione').style.borderColor = 'yellow';   // in css è border-color
+            document.getElementsByClassName('posizione').style.borderStyle = 'solid';   // in css è  border-style
+            document.getElementsByClassName('posizione').style.borderRadius = '10px';    //in css è border-radius
+            document.getElementsByClassName('posizione').style.fontSize = '10px';    //in css è font-size      
+            document.getElementsByClassName('posizione').style.backgroundColor = '#98dba7'; // in css è background-color
+             */
+        }
+
+    </script>
+
+
+</body>
+
+</HTML>

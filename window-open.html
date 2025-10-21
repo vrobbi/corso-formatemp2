@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+<title>esempio di array   JavaScript</title>
+<style>
+body {
+
+  font-size:30px;
+}
+
+</style>
+</head>
+<body>
+
+<a href="javascript:apriFinestra('','Titolo della nuova finestra',500,600)">apri la nuova finestra</a>
+
+<script>
+function apriFinestra(url, titolo, width, height) {
+var params = "width=" + width + ";height=" + height+";resizable=no;scrollbars=yes";
+window.open(url, titolo, params);
+}
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="content-type" content="text/html">
+<title>esempio di funzione in JavaScript</title>
+<style>
+  body {
+
+    font-size: 30px;
+  }
+</style>
+</head>
+
+<body>
+
+
+
+  <script>
+    let persona = {};
+Object.defineProperty(persona, "nome", {
+  value: "Giulia",
+  writable: true, // Non modificabile
+  enumerable: true, // Visibile in iterazioni
+  configurable: false // Non configurabile
+});
+alert(persona.nome);
+persona.nome = "Marco"; // Non ha effetto a causa di writable: false
+alert(persona.nome); // "Giulia"
+  </script>
+
+
+</body>
+
+</html>

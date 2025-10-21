@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<style>
+div {
+  width: 200px;
+  height: 100px;
+  border: 3px solid red;
+  margin: 0 auto;
+}
+
+p#demo {
+
+    font-size:60px;
+}
+</style>
+
+<body>
+
+<h2> HTML DOM Events -event onmousemove</h2>
+
+<div onmousemove="myFunction(event)" onmouseout="clearCoor(event)" onclick= "Cliccato(event)"></div>
+
+<p>Mouse over the rectangle above, and get the coordinates of your mouse pointer.</p>
+
+<p>When the mouse is moved over the div, the p element will display the horizontal and vertical coordinates of your mouse pointer, whose values are returned from the clientX and clientY properties on the 
+MouseEvent object.</p>
+
+<p id="demo">Ancora fuori dal div</p>
+
+<script>
+function myFunction(e) {
+  let x = e.clientX;
+  let y = e.clientY;
+  let coor = "Coordinates: (asse x:"+x +"  asse y:"+ y +")";
+  document.getElementById("demo").innerHTML = coor  + " " + e.type;
+}
+
+function clearCoor(e) {
+  document.getElementById("demo").innerHTML = "Mouse fuori dal div "+ e.type;
+
+}
+
+function Cliccato(e) {
+document.getElementById("demo").innerHTML = "Hai cliccato dentro al div "+ e.type;
+}
+</script>
+
+</body>
+</html>

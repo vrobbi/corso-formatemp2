@@ -1,0 +1,89 @@
+﻿<html>
+
+<head>
+  <title>lavorare con il DOM  aggiungere e togliere gli elementi</title>
+
+  <script>
+
+   
+    function aggiungiElemento() {
+   let nuovoDiv = null;
+    let contadiv =0;
+
+      let incrementa = 100;
+            
+      nuovoDiv1 = function () {
+         contadiv++;
+          let testodiv = prompt('Inserisci il testo nel div','');
+           let colorediv = prompt('Inserisci il colore di sfondo','C0C0C0');
+        incrementa = incrementa + 40;
+        nuovoDiv = document.createElement("div");
+        nuovoDiv.setAttribute('class', 'divmobile');
+        nuovoDiv.style.position = 'absolute';
+        nuovoDiv.style.top = incrementa + 'px';
+        nuovoDiv.style.left = incrementa + 'px';
+        nuovoDiv.style.backgroundColor = colorediv;
+        nuovoDiv.innerHTML = "<h2>" +  testodiv + "</h2>";
+      // let body = document.getElementsByTagName('body');
+         // aggiunge l'elemento appena creato e il suo contenuto al DOM
+        // document.body.insertBefore(nuovoDiv, miodiv);
+        // nuovoDiv.appendChild(body);
+        document.body.appendChild(nuovoDiv);
+         
+        
+      }
+
+      sinistra = function () {
+        incrementa = incrementa - 20;
+        nuovoDiv.style.left = incrementa - 20 + 'px';
+
+      }
+
+      destra = function () {
+        incrementa = incrementa + 20;
+        nuovoDiv.style.left = incrementa - +20 + 'px';
+
+      }
+
+
+       vaisu = function () {
+        incrementa = incrementa - 20;
+        nuovoDiv.style.top = incrementa - 20 + 'px';
+
+      }
+
+        vaigiu = function () {
+        incrementa = incrementa + 20;
+        nuovoDiv.style.top = incrementa + 20 + 'px';
+
+      }
+
+    }
+     rimuovi = function () {
+     let divmobili = document.getElementsByClassName('divmobile');
+      let  numdivdarimuoovere = divmobili.length -1 ;
+        for (let indice =numdivdarimuoovere;indice!= 0; indice--) {
+          divmobili[indice].remove();   // divmobili.length -1
+
+        }
+         divmobili[0].remove(); 
+    }
+
+  </script>
+</head>
+
+
+<body onload="aggiungiElemento ()">
+  <div id='orgdiv1'>Il testo qui sotto viene creato dinamicamente.</div>
+  <input value="crea nuovo div" type="button" onClick="nuovoDiv1()" />
+  <input value="sinistra" type="button" onClick="sinistra()" />
+  <input value="destra" type="button" onClick="destra()" />
+  <input value="vaisu" type="button" onClick="vaisu()" />
+  <input value="vaigiu" type="button" onClick="vaigiu()" />
+  <input value="Remove" type="button" onClick="rimuovi()" />
+  
+
+
+</body>
+
+</html>

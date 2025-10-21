@@ -16,24 +16,29 @@ button {
    background-color:lightgreen;
   }
 </style>
-<script type="text/javascript">
+<script>
 
-function my_outer_function() {
-   let counter=0;
-  
-  increase_counter=function() {
-    counter++;
+function calcoli(a) {
+  function somma() {
+    a = a + a;
+ document.write( a+"<br>");
   }
 
-  decrease_counter=function() {
-    counter--;
+  function moltiplica() {
+    a = a * a;
+   document.write( a+"<br>");
   }
-  
-  show_counter=function() {
-  document.getElementById('visualizzazione').innerHTML = '<br>Vedi il numero di click ' +  counter;
-  }
+
+  return { somma, moltiplica };
 }
 
+let { somma, moltiplica } = calcoli(10);
+
+somma();     // Output: 20
+moltiplica(); // Output: 400
+somma();     // Output: 800
+somma();
+somma();
 
 /*
 Le closure in JavaScript sono una funzione che "ricorda" 
@@ -42,9 +47,9 @@ il suo ambiente lessicale, ovvero ha accesso alle variabili
  esterna ha terminato la sua esecuzione. 
  Questo meccanismo consente alle funzioni interne di accedere e persino 
  modificare le variabili della funzione esterna, 
- che vengono preservate in memoria finché la funzione interna è accessibile.     
+ che vengono preservate in memoria finché la funzione interna è accessibile.    
  
-  Ambito lessicale:
+ Ambito lessicale:
 Le closure si basano sull'ambito lessicale, che determina la visibilità delle variabili in base a 
 dove sono dichiarate nel codice sorgente. Una funzione interna può accedere non solo al proprio scope, 
 ma anche allo scope della funzione esterna che l'ha definita. 
@@ -56,6 +61,7 @@ Una closure è essenzialmente una combinazione di una funzione e dei riferimenti
 esterne in cui è stata creata. 
 
  
+ 
  */
 
 
@@ -65,10 +71,6 @@ esterne in cui è stata creata.
  <title>Esempio di chiusura in javascript</title>
 </head>
 <body>
-<button onclick= 'my_outer_function()'>funzione esterna</button>
-<button onclick= 'increase_counter()'>funzione incremento</button>
-<button onclick= 'decrease_counter()'>funzione decremento</button>
-<button onclick= 'show_counter()'>funzione visualizzazione</button>
 
 <div id ="visualizzazione"></div>
 </body>

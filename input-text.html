@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+<title>esempio di cattura dei data da un campo input di tipo text</title>
+<style>
+body {
+
+  font-size:30px;
+  text-align: center;
+  
+}
+input{
+    font-size:30px;
+    height: auto;
+}
+
+#letturavalore  {
+
+    border:2px red solid;
+}
+
+</style>
+<script>
+    function leggivalore (valore){
+document.getElementById('letturavalore').innerHTML=valore;
+
+    }
+</script>
+</head>
+<body>
+    <div id="letturavalore">Il testo finisce nel div con il colore rosso del bordo</div>
+    <br>
+<input type="text" value="scrivo qualcosa" id="untesto" onkeyup="leggivalore(document.getElementById('untesto').value)">
+
+<input type="button" value="Leggi il valore" onclick="leggivalore(document.getElementById('untesto').value)">
+<script>
+
+
+</script>
+
+
+</body>
+</html>

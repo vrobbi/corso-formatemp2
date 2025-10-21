@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+<title>esempio di selezione dati da textarea </title>
+<style>
+body {
+
+  font-size:30px;
+  text-align: center;
+  
+}
+input {
+    font-size:30px;
+    height: auto;
+}
+
+textarea {
+
+    width:200px;
+    height:100px;
+}
+
+#letturavalore  {
+
+    border:2px red solid;
+}
+
+</style>
+<script>
+    function leggivalore (){
+
+        let testoinarea = document.getElementById('areatesto').value;
+
+     
+testoinarea = testoinarea.replace(/\n/g, "<br>");
+
+  
+document.getElementById('letturavalore').innerHTML=testoinarea;
+
+    }
+</script>
+</head>
+<body>
+    <div id="letturavalore">scritto in html</div>
+    <br>
+<textarea name="areatesto" id ="areatesto"></textarea>
+<input type="button" value="Leggi il valore" onclick="leggivalore()">
+<script>
+
+
+</script>
+
+
+</body>
+</html>

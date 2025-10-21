@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+<title>esempio di selezione dati da casella a discesa</title>
+<style>
+body {
+
+  font-size:30px;
+  text-align: center;
+  
+}
+select {
+    font-size:30px;
+    height: auto;
+}
+
+</style>
+<script>
+    function leggivalore (){
+  let selezione   = document.getElementById('unoselect');
+    let valoriletti ="";
+            for (let i=0;i!=selezione.options.length;i++)
+  {
+   // alert (unoselect.options.length);
+    if (selezione.options[i].selected ===  true) {
+        valoriletti = valoriletti + " ***** "  +   selezione.options[i].value;
+     
+    }
+  };
+
+document.getElementById('letturavalore').innerHTML=valoriletti;
+
+    }
+</script>
+</head>
+<body>
+    <div id="letturavalore"></div>
+    <br>
+<select id="unoselect" multiple>
+<option name="oggettoselect">valore0</option>
+<option name="oggettoselect">valore2</option>
+<option name="oggettoselect">valore3</option>
+<option name="oggettoselect">valore4</option>
+<option name="oggettoselect">valore5</option>
+<option name="oggettoselect">valore6</option>
+<option name="oggettoselect"  selected>valore1</option>
+
+</option>
+</select>
+
+<input type="button" value="Leggi il valore" onclick="leggivalore()">
+<script>
+
+
+</script>
+
+
+</body>
+</html>

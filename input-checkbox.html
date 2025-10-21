@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+<title>esempio di selezione e lettura di checkbox JavaScript</title>
+<style>
+body {
+
+  font-size:30px;
+  text-align: center;
+  
+}
+input {
+    font-size:30px;
+    height: auto;
+}
+
+#letturavalore  {
+
+    border:2px red solid;
+}
+
+</style>
+<script>
+    function leggivalore (){
+let valoriletti = "";
+        let checkboxes = document.getElementsByName('veicoli');
+let selected = [];
+for (let i=0; i<checkboxes.length; i++) {
+    if (checkboxes[i].checked) {
+       valoriletti = valoriletti + " ***** "+ checkboxes[i].value;
+    }
+}
+  
+
+document.getElementById('letturavalore').innerHTML=valoriletti;
+
+    }
+</script>
+</head>
+<body>
+    <div id="letturavalore"></div>
+    <br>
+<input type="checkbox" value="automobile" name="veicoli"> 
+<input type="checkbox" value="camion" name="veicoli"> 
+<input type="checkbox" value="corriera" name="veicoli"> 
+<input type="checkbox" value="bicicletta" name="veicoli"> 
+<input type="button" value="Leggi il valore" onclick="leggivalore()">
+<script>
+
+
+</script>
+
+
+</body>
+</html>

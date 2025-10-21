@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="content-type" content="text/html">
+  <!--<meta http-equiv="content-type" content="text/html; charset=UTF-8"> -->
+  <meta name="author" content="Robbi">
+  <meta name="description" content="Corso front end web developer di HTML CSS  JAVACRIPT">
+  <title>Esempio di tabella </title>
+  <link rel="icon" type="image/x-icon" href="logotalentform.ico">
+  <link rel="stylesheet" type="text/css" href="css/miostile.css">
+
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 0;
+      /* border-radius: 10px;
+
+th, td {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+
+*/
+    }
+
+    td,th {
+
+      text-align: center;
+    }
+    th {
+    background-color:rgb(74, 230, 13);  
+    }
+
+     td {
+    background-color:rgba(212, 91, 54, 1);  
+    }
+
+    table.telefoni {
+    width:600px;
+
+    }
+
+     table.telefoni td {
+    width:600px;
+     background-color:rgb(92, 79, 206);  
+    }
+
+   table.telefoni td.colorediverso {
+    
+     background-color:rgb(223, 224, 119);  
+    }
+
+   
+  </style>
+</head>
+
+<body>
+
+  <table style="width:100%">
+    <caption>
+         Tabella con valori generici    
+      </caption>
+    <tr>
+      <th style="background-color: aqua;">Titolo 1</th>
+      <th>Titolo 2</th>
+      <th>Titolo 3</th>
+    </tr>
+    <tr>
+      <td>Cella 4</td>
+      <td>Cella 5</td>
+      <td>Cella 6</td>
+    </tr>
+    <tr>
+      <td>Cella 7</td>
+      <td>Cella 8</td>
+      <td>Cella 9</td>
+    </tr>
+    <tr>
+      <td>Cella 10</td>
+      <td>Cella 11</td>
+      <td>Cella 12</td>
+    </tr>
+    <tr>
+      <td>Cella 13</td>
+      <td>Cella 14</td>
+      <td>Cella 15</td>
+    </tr>
+  </table>
+
+  <br><br><br><br>
+
+  <table style="width:100%;position:relative;z-index:14;">
+    <caption>
+         Tabella nomi cognomi e et&agrave;     
+      </caption>
+    <tr>
+      <th colspan="2">Nome e cognome</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <td>Paolo</td>
+      <td>Bianchi</td>
+      <td>43</td>
+    </tr>
+    <tr>
+      <td>Massimo</td>
+      <td>Neri</td>
+      <td>57</td>
+    </tr>
+    <tr>
+      <td>Giuseppe</td>
+      <td>Rossi</td>
+      <td>37</td>
+    </tr>
+  </table>
+
+
+  <br><br><br><br>
+  <table class="telefoni">
+    <caption>
+         Tabella dei telefoni       
+      </caption>
+    <tr>
+      <th>Nome</th>
+      <th>Cognome</th>
+      <th>Telefoni</th>
+    </tr>
+    <tr>
+      <td rowspan="2" class="colorediverso">Paolo</td>
+      <td rowspan="2">Rossi</td>
+      <td>555-1234</td>
+    </tr>
+    <tr>
+      <td>555-8745</td>
+    </tr>
+    <tr>
+      <td>Massimo</td>
+      <td class="colorediverso">Bianchi</td>
+      <td>051-12344567</td>
+    </tr>
+    <tr>
+      <td rowspan="3">Enrico</td>
+      <td rowspan="3">Neri</td>
+      <td>555-2456246</td>
+    </tr>
+    <tr><td>555-8746</td>
+    </tr>
+    <tr><td>555-885367</td>
+    </tr>
+
+    <tr>
+    <td class="colorediverso">Monica</td>
+    <td>Verdi</td>
+    <td>01245678</td>
+    </tr>
+  </table>
+
+
+
+</body>
+
+</html>

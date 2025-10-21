@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+   /*
+  body h1 {
+  font-size: clamp(1.2rem,10vW,4rem);/* minimo, preferito, massimo valore  
+
+  }   
+
+  img {
+  max-width: 100%;
+  height:auto;
+
+  }    */
+
+  .sinistro{float:left;}
+
+  .destro{float:right;}
+
+  .container{
+max-width:800px;
+margin:30px auto;
+background:lightgrey;
+height:200px;
+line-height:200px;
+overflow: hidden;
+}
+
+.sinistro, .destro {
+margin:0;
+padding:0;
+width:auto;
+height:200px;
+background:cornflowerblue;
+text-align:center;
+color: #fff;
+font-size:30px;
+}
+
+span-sx{display:block; float:left;}
+
+span-dx{display:block; float:right;}
+
+
+.flex-container{
+display: -webkit-flex;
+display: -moz-flex;
+display: flex;
+/*-webkit-justify-content: space-between;
+-moz-justify-content: space-between;   */
+justify-content: space-between;
+width: 800px;
+height: 200px;
+background-color:lightgrey;
+margin:30px auto;
+}
+
+
+
+/*
+Allineamento di posizione
+justify-content: center;
+justify-content: start;
+justify-content: end;
+justify-content: flex-start;
+justify-content: flex-end;
+justify-content: left;
+justify-content: right;
+
+ normale allineamento
+justify-content: normal;
+
+ Allineamento distribuito
+justify-content: space-between;
+justify-content: space-around;
+justify-content: space-evenly;
+justify-content: stretch;
+
+
+justify-content: safe center;
+justify-content: unsafe center;
+
+ valori globali
+justify-content: inherit;
+justify-content: initial;
+justify-content: revert;
+justify-content: revert-layer;
+justify-content: unset;    
+
+Riferimenti:    https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+*/
+
+.flex-item {
+background-color:cornflowerblue;
+width: auto;
+height:200px;
+line-height:200px;
+text-align:center;
+color: #fff;
+font-size:30px;
+}
+
+</style>
+</head>
+<body>
+
+<h1>The flex-direction Property</h1>
+
+<div class="container">
+	<div class="sinistro">Div sx usando float</div>
+	<div class="destro">Div dx usando float</div>
+</div>
+
+
+<div class="flex-container">
+  <div class="flex-item">flex item 1 con flex</div>
+  <div class="flex-item">flex item 2  con flex</div>
+</div>
+
+</body>
+</html>

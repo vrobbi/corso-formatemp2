@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="content-type" content="text/html">
+    <!--<meta http-equiv="content-type" content="text/html; charset=UTF-8"> -->
+    <meta name="author" content="Robbi">
+    <meta name="description" content="Corso front end web developer di HTML CSS  JAVACRIPT">
+    <title>esempio con media query </title>
+    <link rel="x-icon" href="logotalentform.ico" type="image/x-icon">
+
+    <style type="text/css">
+        /* Stili di base validi per tutti i dispositivi */
+        body {
+            background-color: olive;
+            color: white;
+            font-size: 14px;
+        }
+
+        /* For devices with a minimum width of 768px (Medium) */
+        @media screen and (min-width: 768px) {
+            body {
+                background-color: blue;
+                color: white;
+                font-size:medium;
+
+            }
+
+            /* For devices with a minimum width of 992px (Large) */
+            @media screen and (min-width: 992px) {
+                body {
+                    background-color: tan;
+                    color: black;
+                    font-size: small;
+                }
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div> <h2> HTML DOM Events -event onresize</h2>
+
+    <p>Resize the browser window to fire the <code>resize</code> event.</p>
+<p>Window height: <span id="height"></span></p>
+<p>Window width: <span id="width"></span></p>
+
+        
+        INTESTAZIONE DIV hkfhjkfhjfrykyrkyukykufkfjkfhkjfhkj
+        jfkfjhkfh
+        fhjkfhjkfhjkfhj
+        kfhjkfhkfuyryuyurykjkfhjkfhjkfhjkfhk
+        fhjkfhkfhjkfhkfhkfhj
+        fhjkfhjkfhjkfhj j
+
+
+        ty uet et ueuty
+    </div>
+
+
+<script>
+const heightOutput = document.querySelector("#height");
+const widthOutput = document.querySelector("#width");
+
+function reportWindowSize() {
+  heightOutput.textContent = window.innerHeight;
+  widthOutput.textContent = window.innerWidth;
+}
+
+window.onresize = reportWindowSize;
+</script>
+
+
+</body> <!-- ISO 639-1 -->
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+    <!--<meta http-equiv="content-type" content="text/html; charset=UTF-8"> -->
+    <meta name="author" content="Robbi">
+    <meta name="description" content="esempi di elementi con visualizzazione flex">
+    <title>esempi di stile con div</title>
+    <link rel="icon" type="image/x-icon" href="logotalentform.ico">
+    <!--<link rel="stylesheet" type="text/css" href="css/miostile.css">-->
+
+    <style>
+
+        h1,h2,h3 {
+  font-size: clamp(1.2rem,10vW,4rem);/* minimo, preferito, massimo valore  */
+
+  } 
+
+  img {
+  max-width: 100%;
+  height:auto;
+
+  }
+
+        
+   *.box > * {
+  border: 2px solid rgb(96 139 168);
+  border-radius: 5px;
+  background-color: rgb(96 139 168 / 0);
+  width:200px;
+}
+
+.box {
+  border: 2px green solid;
+  display: flex;
+  flex-wrap: wrap;
+  width:80%;
+}
+
+.one {
+  flex: 1 1 auto;
+}
+
+.two {
+  flex: 1 1 100px;
+}
+
+.three {
+  flex: 1 1 auto;
+}
+
+   
+    </style>
+    
+</head>
+
+<body>
+    <div class="box">
+  <div class="one">UNO<BR>testo nel primo div<br>ffhfhfshyty teyj etyj ety teyjet</div>
+  <div class="two">DUE</div>
+  <div class="three">TRE </div>
+</div>
+
+<div class="box">
+<div class="one">QUATTRO</div>
+  <div>CINQUE</div>
+  <div>SEI <br />has <br />extra <br />PRIMO DIV Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, 
+        vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices n
+        ec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. 
+        Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis 
+        urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed 
+        ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis.
+        Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum.
+         Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet,
+           nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor.
+            Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. 
+            Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, 
+            lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. 
+            Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc 
+            venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. 
+            Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. 
+            Cras ac leo purus. Mauris quis diam velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+             aliquet. Mauris ante ligula,</div>
+</div>
+
+
+
+</body>
+
+</html>

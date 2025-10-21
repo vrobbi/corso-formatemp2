@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+    <!--<meta http-equiv="content-type" content="text/html; charset=UTF-8"> -->
+    <meta name="author" content="Robbi">
+    <meta name="description" content="esempi di elementi con visualizzazione flex">
+    <title>esempi di stile con div</title>
+    <link rel="icon" type="image/x-icon" href="logotalentform.ico">
+    <!--<link rel="stylesheet" type="text/css" href="css/miostile.css">-->
+
+    <style>
+
+        h1,h2,h3 {
+  font-size: clamp(1.2rem,10vW,4rem);/* minimo, preferito, massimo valore  */
+
+  } 
+
+  img {
+  max-width: 100%;
+  height:auto;
+
+  }
+
+ 
+.container {
+ /* display: grid;  */
+  display: grid;
+  grid-template-columns: auto 200px auto;
+  /* grid-template-columns: 200px 200px 200px;*/
+  background-color: dodgerblue;
+  padding: 10px;
+}
+.container > div {
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<h1>Grid Layout</h1>
+
+<p>A Grid Layout must have a parent element with the <em>display</em> property set to <em>grid</em> or <em>inline-grid</em>.</p>
+
+<p>Direct child element(s) of the grid container automatically becomes grid items.</p>
+
+<div class="container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>  
+  <div>7</div>
+  <div>8</div>
+</div>
+
+</body>
+</html>

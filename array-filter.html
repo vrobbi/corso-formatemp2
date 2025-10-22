@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+<title>esempio di array   JavaScript</title>
+<style>
+body {
+
+  font-size:30px;
+}
+
+</style>
+</head>
+<body>
+Il metodo filter() è uno dei metodi degli array che mi consentono di iterare 
+gli elementi dell'array senza usare un ciclo. Altri metodi simili sono il metodo every() e il metodo some().
+
+<br><br>
+
+
+<script>
+
+var numeri = new Array(1, 2, 3, 4,-4);
+
+function minore3(valore, indice, array) {
+var risultato = false;
+if (valore < 3) risultato = true;
+return risultato;
+}
+
+document.write(numeri.filter(minore3));
+</script>
+
+
+</body>
+</html>

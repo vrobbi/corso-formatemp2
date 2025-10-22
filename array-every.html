@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+<title>esempio di array   JavaScript</title>
+<style>
+body {
+
+  font-size:30px;
+}
+
+</style>
+</head>
+<body>
+Il metodo every di Javascript mi permette di verificare se tutti gli elementi di un array soddisfano una condizione.
+
+<br><br>
+
+
+<script>
+
+var numeri = new Array(1, 2, 3, 4, 5);
+
+function minore7(valore, indice, array) {
+var risultato = false;
+if (valore < 7) risultato = true;
+return risultato;
+}
+
+document.write(numeri.every(minore7));
+</script>
+
+
+</body>
+</html>

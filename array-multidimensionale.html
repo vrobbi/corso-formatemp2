@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="content-type" content="text/html">
+<title>esempio di array multidimensionali  JavaScript</title>
+<style>
+body {
+
+  font-size:30px;
+}
+
+</style>
+</head>
+<body>
+  <div id="letturavalore"></div>
+
+
+<script>
+
+     function leggivalore (valore){
+document.getElementById('letturavalore').innerHTML=valore;
+
+    }
+// Creare un array multidimensionale
+// Prima crea un array di 10 elementi che corrispondono
+// alle righe della tabella
+let tabella = new Array(10);
+
+for(let i = 0; i < tabella.length; i++) {
+    // Per ogni riga, creiamo un array di 10 elementi
+    tabella[i] = new Array(10);
+}
+
+// Inizializza l'array multidimensionale
+for(let riga = 0; riga < tabella.length; riga++) {
+    for(let colonna = 0; colonna < tabella[riga].length; colonna++) {
+        tabella[riga][colonna] = (riga + 1) * (colonna + 1);
+    }
+}
+
+// Stampa la tabella
+for(let riga = 0; riga < tabella.length; riga++) {
+    let rigaStringa = "";
+    for(let colonna = 0; colonna < tabella[riga].length; colonna++) {
+        // Aggiungi il valore alla stringa della riga
+        rigaStringa += tabella[riga][colonna] + "\t";
+    }
+    console.log(rigaStringa);
+    leggivalore(rigaStringa);
+}
+
+</script>
+
+
+</body>
+</html>
